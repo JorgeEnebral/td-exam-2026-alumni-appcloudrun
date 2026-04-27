@@ -33,10 +33,11 @@ jobs:
 
     - name: Deploy to Cloud Run
       env:
-        SERVICE_NAME: python-appcloudrun
+        SERVICE_NAME: python-appcloudrun-service
+
         REGION: us-central1
       run: |
-        gcloud run deploy SERVICE_NAME \
+        gcloud run deploy $SERVICE_NAME \
             --image=$IMAGE_NAME:latest \
             --region=us-central1 \
             --platform=managed \
