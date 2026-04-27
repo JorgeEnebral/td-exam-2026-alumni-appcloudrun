@@ -37,7 +37,7 @@ jobs:
         REGION: us-central1
       run: |
         gcloud run deploy $SERVICE_NAME \
-            --image=gcr.io/${{ vars.GCP_PROJECT_ID }}/python-appcloudrun \
+            --image=$$IMAGE_NAME:latest \
             --region=us-central1 \
             --platform=managed \
             --allow-unauthenticated \
